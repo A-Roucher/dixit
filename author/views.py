@@ -12,6 +12,7 @@ def no_author(request):
 
 @csrf_protect
 def author_summary(request, author_name):
+    author_name = author_name.replace('_', ' ')
     author_quotes = get_quotes_from_author(author_name)
     author_data = {
         "author_name": author_name,
